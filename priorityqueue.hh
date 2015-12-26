@@ -7,6 +7,7 @@ public:
 		return "PriorityQueueNotFoundException";
 	}
 };
+
 class PriorityQueueEmptyException : public std::exception {
 public:
 	virtual const char *what() const noexcept {
@@ -17,15 +18,16 @@ public:
 template<typename K, typename V>
 class PriorityQueue {
 private:
-	std::multiset<std::pair<V, K>> container;
-	const std::pair<V, K> &min() const {
+	std::multiset <std::pair<V, K>> container;
+
+	const std::pair <V, K> &min() const {
 		if (empty()) {
 			throw PriorityQueueEmptyException();
 		}
 		return *container.begin();
 	};
 
-	const std::pair<V, K> &max() const {
+	const std::pair <V, K> &max() const {
 		if (empty()) {
 			throw PriorityQueueEmptyException();
 		}
@@ -54,8 +56,12 @@ public:
 	// Operator przypisania [O(queue.size()) dla użycia P = Q, a O(1) dla użycia
 	// P = move(Q)]
 	PriorityQueue<K, V> &operator=(const PriorityQueue<K, V> &queue) {
-		//TODO
 		container = queue.container;
+		return *this;
+	}
+
+	PriorityQueue<K, V> &operator=(PriorityQueue<K, V> &&queue) {
+		container = std::move(queue.container);
 		return *this;
 	}
 
@@ -127,7 +133,7 @@ public:
 	// PriorityQueueNotFoundException(); w przypadku kiedy w kolejce jest kilka par
 	// o kluczu key, zmienia wartość w dowolnie wybranej parze o podanym kluczu
 	void changeValue(const K &key, const V &value) throw() {
-		std::pair<V, K> pair(value, key);
+		std::pair <V, K> pair(value, key);
 		auto it = container.upper_bound(pair);
 		if (it == container.begin()) {
 			throw PriorityQueueNotFoundException();
@@ -136,7 +142,7 @@ public:
 		/*if (it->first != value) {
 			throw PriorityQueueNotFoundException();
 		}*/
-		std::cout << value << " " << key << " " << it->first << " " << it->second << "\n";
+		//std::cout << value << " " << key << " " << it->first << " " << it->second << "\n";
 		container.erase(it);
 		insert(key, value);
 	}
@@ -146,12 +152,17 @@ public:
 	// [O(size() + queue.size() * log (queue.size() + size()))]
 	void merge(PriorityQueue<K, V> &queue) {
 		//TODO
+		while (!queue.empty()) {
+			container.insert(*queue.container.begin());
+			queue.container.erase(queue.container.begin());
+		}
 	}
 
 	// Metoda zamieniającą zawartość kolejki z podaną kolejką queue (tak jak
 	// większość kontenerów w bibliotece standardowej) [O(1)]
 	void swap(PriorityQueue<K, V> &queue) {
 		//TODO
+		std::swap(container, queue.container);
 	}
 
 	/*Klasa PriorityQueue<K, V> powinna zawierać publiczne definicje typów
@@ -172,22 +183,22 @@ public:
 	}
 };
 
-template <typename K, typename V>
+template<typename K, typename V>
 bool operator!=(const PriorityQueue<K, V> &first, const PriorityQueue<K, V> &second) {
 	return !(first == second);
 }
 
-template <typename K, typename V>
+template<typename K, typename V>
 bool operator>(const PriorityQueue<K, V> &first, const PriorityQueue<K, V> &second) {
 	return !(first <= second);
 }
 
-template <typename K, typename V>
+template<typename K, typename V>
 bool operator>=(const PriorityQueue<K, V> &first, const PriorityQueue<K, V> &second) {
 	return !(first < second);
 }
 
-template <typename K, typename V>
+template<typename K, typename V>
 bool operator<=(const PriorityQueue<K, V> &first, const PriorityQueue<K, V> &second) {
 	return first < second || first == second;
 }
