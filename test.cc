@@ -18,15 +18,15 @@ int main() {
 
     assert(P.size() == 2);
     assert(P.maxKey() == 1);
+
     assert(P.maxValue() == 42);
     assert(P.minKey() == 2);
     assert(P.minValue() == 13);
-
     PriorityQueue<int, int> Q(f(P));
 
     Q.deleteMax();
     Q.deleteMin();
-    Q.deleteMin();
+    //Q.deleteMin();
 
     assert(Q.empty());
 
@@ -53,7 +53,6 @@ int main() {
     }
 
     S.changeValue(2, 200);
-
     try
     {
         while (true)
