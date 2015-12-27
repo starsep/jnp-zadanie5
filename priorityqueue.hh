@@ -56,7 +56,9 @@ public:
 	// Operator przypisania [O(queue.size()) dla użycia P = Q, a O(1) dla użycia
 	// P = move(Q)]
 	PriorityQueue<K, V> &operator=(const PriorityQueue<K, V> &queue) {
-		container = queue.container;
+		decltype(container) copy(container);
+		copy = queue.container;
+		std::swap(container, copy);
 		return *this;
 	}
 
