@@ -111,7 +111,7 @@ public:
 	// największej wartości [O(log size())]
 	void deleteMin() {
 		if (empty()) {
-			throw PriorityQueueEmptyException();
+			return;
 		}
 		//TODO
 		container.erase(container.begin());
@@ -120,7 +120,7 @@ public:
 	void deleteMax() {
 		//TODO
 		if (empty()) {
-			throw PriorityQueueEmptyException();
+			return;
 		}
 		auto it = container.end();
 		it--;
