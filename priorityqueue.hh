@@ -31,9 +31,7 @@ private:
 		if (empty()) {
 			throw PriorityQueueEmptyException();
 		}
-		auto it = container.end();
-		it--;
-		return *it;
+		return *container.rbegin();
 	};
 public:
 	using size_type = std::size_t;
