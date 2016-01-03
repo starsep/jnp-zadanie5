@@ -1,15 +1,13 @@
 #include <cstddef>
 #include <set>
 
-class PriorityQueueNotFoundException : public std::exception {
-public:
+struct PriorityQueueNotFoundException : public std::exception {
 	virtual const char *what() const noexcept {
 		return "PriorityQueueNotFoundException";
 	}
 };
 
-class PriorityQueueEmptyException : public std::exception {
-public:
+struct PriorityQueueEmptyException : public std::exception {
 	virtual const char *what() const noexcept {
 		return "PriorityQueueEmptyException";
 	}

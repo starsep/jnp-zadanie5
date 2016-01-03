@@ -38,15 +38,15 @@
       <file leaf-file-name="priorityqueue.hh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/priorityqueue.hh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33292535">
-              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.06609547">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding>
-                <element signature="e#369#393#0" expanded="true" />
-                <element signature="e#5253#5277#0" expanded="true" />
-                <element signature="e#5479#5503#0" expanded="true" />
-                <element signature="e#5700#5724#0" expanded="true" />
-                <element signature="e#5925#5949#0" expanded="true" />
-                <element signature="e#6172#6196#0" expanded="true" />
+                <element signature="e#355#379#0" expanded="true" />
+                <element signature="e#5239#5263#0" expanded="true" />
+                <element signature="e#5465#5489#0" expanded="true" />
+                <element signature="e#5686#5710#0" expanded="true" />
+                <element signature="e#5911#5935#0" expanded="true" />
+                <element signature="e#6158#6182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -220,12 +220,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#369#393#0" expanded="true" />
-            <element signature="e#5253#5277#0" expanded="true" />
-            <element signature="e#5479#5503#0" expanded="true" />
-            <element signature="e#5700#5724#0" expanded="true" />
-            <element signature="e#5925#5949#0" expanded="true" />
-            <element signature="e#6172#6196#0" expanded="true" />
+            <element signature="e#355#379#0" expanded="true" />
+            <element signature="e#5239#5263#0" expanded="true" />
+            <element signature="e#5465#5489#0" expanded="true" />
+            <element signature="e#5686#5710#0" expanded="true" />
+            <element signature="e#5911#5935#0" expanded="true" />
+            <element signature="e#6158#6182#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -235,12 +235,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#369#393#0" expanded="true" />
-            <element signature="e#5253#5277#0" expanded="true" />
-            <element signature="e#5479#5503#0" expanded="true" />
-            <element signature="e#5700#5724#0" expanded="true" />
-            <element signature="e#5925#5949#0" expanded="true" />
-            <element signature="e#6172#6196#0" expanded="true" />
+            <element signature="e#355#379#0" expanded="true" />
+            <element signature="e#5239#5263#0" expanded="true" />
+            <element signature="e#5465#5489#0" expanded="true" />
+            <element signature="e#5686#5710#0" expanded="true" />
+            <element signature="e#5911#5935#0" expanded="true" />
+            <element signature="e#6158#6182#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -250,12 +250,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#369#393#0" expanded="true" />
-            <element signature="e#5253#5277#0" expanded="true" />
-            <element signature="e#5479#5503#0" expanded="true" />
-            <element signature="e#5700#5724#0" expanded="true" />
-            <element signature="e#5925#5949#0" expanded="true" />
-            <element signature="e#6172#6196#0" expanded="true" />
+            <element signature="e#355#379#0" expanded="true" />
+            <element signature="e#5239#5263#0" expanded="true" />
+            <element signature="e#5465#5489#0" expanded="true" />
+            <element signature="e#5686#5710#0" expanded="true" />
+            <element signature="e#5911#5935#0" expanded="true" />
+            <element signature="e#6158#6182#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -265,12 +265,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#369#393#0" expanded="true" />
-            <element signature="e#5253#5277#0" expanded="true" />
-            <element signature="e#5479#5503#0" expanded="true" />
-            <element signature="e#5700#5724#0" expanded="true" />
-            <element signature="e#5925#5949#0" expanded="true" />
-            <element signature="e#6172#6196#0" expanded="true" />
+            <element signature="e#355#379#0" expanded="true" />
+            <element signature="e#5239#5263#0" expanded="true" />
+            <element signature="e#5465#5489#0" expanded="true" />
+            <element signature="e#5686#5710#0" expanded="true" />
+            <element signature="e#5911#5935#0" expanded="true" />
+            <element signature="e#6158#6182#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -319,15 +319,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/priorityqueue.hh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33292535">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.06609547">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
           <folding>
-            <element signature="e#369#393#0" expanded="true" />
-            <element signature="e#5253#5277#0" expanded="true" />
-            <element signature="e#5479#5503#0" expanded="true" />
-            <element signature="e#5700#5724#0" expanded="true" />
-            <element signature="e#5925#5949#0" expanded="true" />
-            <element signature="e#6172#6196#0" expanded="true" />
+            <element signature="e#355#379#0" expanded="true" />
+            <element signature="e#5239#5263#0" expanded="true" />
+            <element signature="e#5465#5489#0" expanded="true" />
+            <element signature="e#5686#5710#0" expanded="true" />
+            <element signature="e#5911#5935#0" expanded="true" />
+            <element signature="e#6158#6182#0" expanded="true" />
           </folding>
         </state>
       </provider>
