@@ -49,7 +49,7 @@ public:
 	PriorityQueue<K, V> &operator=(const PriorityQueue<K, V> &queue) {
 		decltype(container) copy(container);
 		copy = queue.container;
-		swap(container, copy);
+		container.swap(copy);
 		return *this;
 	}
 
