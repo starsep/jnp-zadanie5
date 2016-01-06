@@ -1,5 +1,6 @@
 #include <cstddef>
 #include <set>
+#include <memory>
 
 struct PriorityQueueNotFoundException : public std::exception {
 	virtual const char *what() const noexcept {
@@ -16,7 +17,19 @@ struct PriorityQueueEmptyException : public std::exception {
 template<typename K, typename V>
 class PriorityQueue {
 private:
-	std::multiset <std::pair<V, K>> container;
+	using stored_type = std::pair<V, K>;
+	std::multiset <stored_type> container;
+
+	struct cmp {
+		bool operator()(const std::shared_ptr <stored_type> &a, const std::shared_ptr <stored_type> &b) {
+			if (a->second != b->second) {
+				return a->second < b->second;
+			}
+			return a->first < b->first;
+		}
+	};
+
+	std::multiset <std::shared_ptr<stored_type>, cmp> containerKV;
 public:
 	using size_type = std::size_t;
 	using key_type = K;
@@ -31,14 +44,16 @@ public:
 	  Złożoność: O(queue.size())
 	  Exception safety: no-throw */
 	PriorityQueue(const PriorityQueue<K, V> &queue)
-		: container(queue.container) {
+		: container(queue.container),
+		  containerKV(queue.containerKV) {
 	}
 
 	/*Konstruktor przenoszący
 	  Złożoność: O(1)
 	  Exception safety: no-throw */
 	PriorityQueue(PriorityQueue<K, V> &&queue)
-		: container(std::move(queue.container)) {
+		: container(std::move(queue.container)),
+		  containerKV(std::move(queue.containerKV)) {
 	}
 
 	/*Operator przypisania dla użycia P = Q
@@ -46,8 +61,11 @@ public:
 	  Exception safety: strong */
 	PriorityQueue<K, V> &operator=(const PriorityQueue<K, V> &queue) {
 		decltype(container) copy(container);
+		decltype(containerKV) copyKV(containerKV);
 		copy = queue.container;
+		copyKV = queue.containerKV;
 		container.swap(copy);
+		containerKV.swap(copyKV);
 		return *this;
 	}
 
@@ -56,6 +74,7 @@ public:
 	  Exception safety: no-throw */
 	PriorityQueue<K, V> &operator=(PriorityQueue<K, V> &&queue) {
 		container = std::move(queue.container);
+		containerKV = std::move(queue.containerKV);
 		return *this;
 	}
 
@@ -75,9 +94,10 @@ public:
 
 	/*Metoda wstawiająca do kolejki parę o kluczu key i wartości value
 	  Złożoność: O(log size())
-	  Exception safety: strong*/
+	  Exception safety: strong */
 	void insert(const K &key, const V &value) {
-		container.insert(std::make_pair(value, key));
+		auto it = container.insert(std::make_pair(value, key));
+		//containerKV.insert(std::make_shared<decltype(it)>(*it));
 	}
 
 	/*Metoda zwracająca najmniejszą wartość przechowywaną w kolejce
