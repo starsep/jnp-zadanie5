@@ -26,7 +26,7 @@ int main() {
 
     Q.deleteMax();
     Q.deleteMin();
-    //Q.deleteMin();
+    Q.deleteMin();
 
     assert(Q.empty());
 
@@ -39,7 +39,7 @@ int main() {
     PriorityQueue<int, int> S;
     S = R;
 
-    try
+    /*try
     {
         S.changeValue(4, 400);
     }
@@ -51,8 +51,8 @@ int main() {
     {
         assert(!"exception missing!");
     }
-
-    S.changeValue(2, 200);
+*/
+	S.changeValue(2, 200);
     try
     {
         while (true)
