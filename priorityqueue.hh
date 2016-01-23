@@ -202,6 +202,9 @@ public:
 	  Złożoność: O(log size())
 	  Exception safety: strong */
 	void changeValue(const K &key, const V &value) {
+		if (empty()) {
+			throw PriorityQueueNotFoundException();
+		}
 		V tmp_value = minValue();
 		key_value pair = std::make_pair(std::make_shared<K>(key), std::make_shared<V>(tmp_value));
 		auto it = containerKV.lower_bound(pair);
@@ -245,14 +248,41 @@ public:
 	  Złożoność: O(size())
 	  Exception safety: strong */
 	bool operator==(const PriorityQueue &queue) const {
-		return containerKV == queue.containerKV;
+		if (size() != queue.size()) {
+			return false;
+		}
+		auto it = queue.containerKV.begin();
+		cmp<key_value> comparator;
+		for (auto it2 = containerKV.begin(); it2 != containerKV.end(); it++, it2++) {
+			if (comparator(*it, *it2) || comparator(*it2, *it)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/*Operator porównania
 	  Złożoność: O(size())
 	  Exception safety: strong */
 	bool operator<(const PriorityQueue &queue) const {
-		return containerKV < queue.containerKV;
+		if (empty() || queue.empty()) {
+			return containerKV < queue.containerKV; 
+		}
+		auto it = containerKV.begin();
+		auto it2 = queue.containerKV.begin();
+		cmp<key_value> comparator;
+		for (; it != containerKV.end() && it2 != queue.containerKV.end(); it++, it2++) {
+			if (comparator(*it, *it2)) {
+				return true;
+			}
+			if (comparator(*it2, *it)) {
+				return false;
+			}
+		}
+		if (size() != queue.size()) {
+			return size() < queue.size();
+		}
+		return false;
 	}
 };
 
